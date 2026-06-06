@@ -1,0 +1,1105 @@
+/* ------------------------------------------------------------
+   1. THEME VARIABLES — Global color system + typography
+   These variables control the entire brand identity.
+   Changing a value here updates it everywhere.
+------------------------------------------------------------ */
+:root {
+    --primary-color: #2F4F46;
+    /* Deep Herbal Green – navbar, footer, accents */
+    --accent-color: #A88A4F;
+    /* Moonlight Gold – buttons, highlights */
+    --secondary-accent: #8E78A8;
+    /* Dusty Lavender – hover accents */
+
+    --bg-light: #F6F1E9;
+    /* Warm Cream – main page background */
+    --section-bg: #8FA89A;
+    /* Dusty Sage – section backgrounds */
+
+    --card-bg: #FFFFFF;
+    /* Card backgrounds */
+    --text-main: #2F3A34;
+    /* Default body text */
+    --text-light: #FFFFFF;
+    /* Text on dark backgrounds */
+
+    --font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+    --font-weight: bold;
+    --container-width: 1100px;
+    /* Max width for centered content */
+}
+
+/* ------------------------------------------------------------
+   2. RESET — Removes browser default spacing + box model issues
+------------------------------------------------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------------------------------
+   3. BASE STYLES — Global layout + typography
+------------------------------------------------------------ */
+body {
+    font-family: var(--font-family);
+    /* Your brand script font */
+    line-height: 1.6;
+    /* Comfortable reading */
+    background-color: var(--bg-light);
+    /* Warm cream background */
+    color: var(--text-main);
+    /* Herbal green text */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensures footer stays at bottom */
+}
+
+/* ------------------------------------------------------------
+   4. HEADER WRAPPER — Holds the navbar at the top
+------------------------------------------------------------ */
+.header {
+    position: fixed;
+    /* Stays visible while scrolling */
+    top: 0;
+    width: 100%;
+    z-index: 900;
+    /* Ensures it sits above all content */
+}
+
+/* ------------------------------------------------------------
+   5. NAVBAR — Main site navigation
+   - Deep herbal green background
+   - Logo left, links right
+   - Fixed height for consistency
+------------------------------------------------------------ */
+.navBar {
+    background: var(--primary-color);
+    /* Herbal green */
+    color: var(--text-light);
+    /* White text */
+    display: flex;
+    justify-content: space-between;
+    /* Logo left, links right */
+    align-items: center;
+    padding: 1px 2px;
+    gap: 10px;
+    position: relative;
+    min-height: 90px;
+    /* Locks navbar height */
+    top: 0;
+    z-index: 1000;
+    /* Above hero image */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+}
+
+/* ------------------------------------------------------------
+   6. LOGO WRAPPER — Controls logo size + alignment
+------------------------------------------------------------ */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 95px;
+    /* Matches navbar height */
+    width: 95px;
+    /* Square container */
+    margin: 10px
+}
+
+/* Logo image sizing */
+.logo-img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    /* Prevents distortion */
+}
+
+/* ------------------------------------------------------------
+   7. NAVIGATION LINKS — Right side of navbar
+------------------------------------------------------------ */
+.nav-links {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    justify-content: flex-end;
+    /* Pushes links to the right */
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    gap: 10px;
+    padding: 5px 20px;
+    margin: auto;
+}
+
+/* Individual link spacing */
+.nav-links li {
+    padding: 2px;
+}
+
+/* Link appearance */
+.nav-links a {
+    color: #bdc3c7;
+    /* Soft silver */
+    white-space: nowrap;
+    /* Prevents wrapping */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Hover + active state */
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text-light);
+    /* White on hover */
+}
+
+/* ------------------------------------------------------------
+   8. HERO SECTION — Large banner with background image
+   - Dark overlay improves text readability
+   - Centered content
+------------------------------------------------------------ */
+.hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        /* Dark overlay */
+        url("https://images.stockcake.com/public/0/a/0/0a002cfc-9ba7-4bd1-9af5-f2eedf74f956_large/ancient-healing-remedies-stockcake.jpg") no-repeat center/cover;
+    /* Full-width hero image */
+
+    height: 55vh;
+    /* Responsive hero height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-light);
+    /* White text */
+    padding: 280px 20px 190px;
+    /* Extra top padding for fixed navbar */
+}
+
+/* ------------------------------------------------------------
+   9. HERO CTA BUTTON — Gold pill-shaped button
+------------------------------------------------------------ */
+.cta-button {
+    display: inline-block;
+    padding: 12px 35px;
+    background: var(--accent-color);
+    /* Gold */
+    color: var(--text-light);
+    /* White text */
+    text-decoration: none;
+    border-radius: 50px;
+    /* Soft pill shape */
+    font-weight: bold;
+    transition: transform 0.2s ease;
+    margin: 30px;
+}
+
+/* Hover effect */
+.cta-button:hover {
+    transform: scale(1.05);
+    /* Slight lift */
+    background: var(--secondary-accent);
+    /* Lavender hover */
+}
+
+/* ------------------------------------------------------------
+   10. SCROLL SECTION — Horizontal auto-scrolling emoji strip
+   - Used for moon phases, herbs, Coming Soon items, etc.
+   - Uses a long track that animates left infinitely
+------------------------------------------------------------ */
+.scroll {
+    overflow: hidden;
+    /* Hides overflowing emojis */
+    white-space: nowrap;
+    /* Prevents wrapping to new lines */
+    padding: 15px 0;
+    margin: 15px auto 10px auto;
+    /* Centered with spacing */
+    border-radius: 12px;
+    position: relative;
+    max-width: 100%;
+    box-sizing: border-box;
+    /* background-color: blue; */
+
+    /* Soft cream gradient background for a magical glow */
+    background: linear-gradient(90deg,
+            #f5f1e6 0%,
+            #faf8f3 50%,
+            #f5f1e6 100%);
+}
+
+/* ------------------------------------------------------------
+   11. SCROLL TRACK — The moving strip of items
+   - Inline-flex keeps items on one line
+   - Animation moves the entire track left
+------------------------------------------------------------ */
+.scroll-track {
+    display: inline-flex;
+    /* Keeps items in a single row */
+    flex-wrap: nowrap;
+    /* Double-locks single-line layout */
+    animation: scrollAnim 90s linear infinite;
+    /* Slow continuous scroll */
+}
+
+/* ------------------------------------------------------------
+   12. SCROLL ITEM — Each emoji + label pair
+   - Includes spacing, text styling, and glow
+------------------------------------------------------------ */
+.scroll-item {
+    white-space: nowrap;
+    /* Prevents internal wrapping */
+    margin: 0 40px;
+    /* Space between items */
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    /* Herbal green text */
+    opacity: 0.9;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+    /* Soft glow */
+}
+
+/* ------------------------------------------------------------
+   13. SCROLL EDGE FADES — Soft fade on left + right
+   - Creates a magical “tunnel” effect
+------------------------------------------------------------ */
+.scroll::before,
+.scroll::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    pointer-events: none;
+    /* Allows scroll interaction */
+}
+
+/* Left fade */
+.scroll::before {
+    left: 0;
+    background: linear-gradient(to right, #faf8f3, transparent);
+}
+
+/* Right fade */
+.scroll::after {
+    right: 0;
+    background: linear-gradient(to left, #faf8f3, transparent);
+}
+
+/* ------------------------------------------------------------
+   14. SCROLL ANIMATION — Moves track left infinitely
+------------------------------------------------------------ */
+@keyframes scrollAnim {
+    from {
+        transform: translateX(0);
+        /* Start at normal position */
+    }
+
+    to {
+        transform: translateX(-50%);
+        /* Move left halfway (loopable) */
+    }
+}
+
+/* ------------------------------------------------------------
+   15. COMING SOON EMOJI ITEMS — Floating magical emoji cards
+   - Used for shirts, jewelry, mugs, crystals, etc.
+   - Soft glassy background + floating animation
+------------------------------------------------------------ */
+/* ------------------------------------------------------------
+   15. LAYOUT — Horizontal track and alignment
+------------------------------------------------------------ */
+.coming-track {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 0 0;
+    gap: 24px;
+    /* Space between each item */
+    /* background-color: yellow; */
+}
+
+/* ------------------------------------------------------------
+   16. EMOJI CARDS — Frosted glass blocks
+------------------------------------------------------------ */
+.coming-emoji {
+    font-size: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: float 2s ease-in-out infinite;
+    margin: 0 50px;
+    /* background-color: blue; */
+}
+
+/* Hover glow effect */
+.coming-emoji:hover {
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.45);
+}
+
+/* Floating animation */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* ------------------------------------------------------------
+   17. SCROLL ITEM LABELS — Text under each emoji 
+------------------------------------------------------------ */
+.coming-item p {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: #050505;
+    text-align: center;
+}
+
+/* ------------------------------------------------------------
+   18. MAIN CONTAINER — Centers content on the page
+   - Used for product grids, blog lists, etc.
+------------------------------------------------------------ */
+.container {
+    flex: 1;
+    width: 90%;
+    max-width: var(--container-width);
+    /* 1100px max width */
+    margin: 0 auto;
+    padding: 15px 0 40px;
+    /* background-color: red; */
+}
+
+/* ------------------------------------------------------------
+   19. CARD GRID — 3-column layout for products/services
+   - Automatically adjusts with media queries later
+------------------------------------------------------------ */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns on desktop */
+    gap: 30px;
+    margin-top: 40px;
+    /* Prevents overlap with hero on smaller screens */
+}
+
+/* ------------------------------------------------------------
+   20. CARD — Universal card styling for products, services, etc.
+   - Includes hover lift + centered content
+------------------------------------------------------------ */
+.card {
+    position: relative;
+    /* Needed for Quick View button positioning */
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: translateY 0.3s ease;
+    max-width: 300px;
+    margin: 0 auto;
+    /* Centers cards in grid cells */
+    /* background-color: green; */
+}
+
+/* Card images */
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Hover lift effect */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Catalog buttons */
+.btn-lavender {
+    background-color: #5A3E85;
+    color: white;
+}
+
+.btn-pink {
+    background-color: #c2185b;
+    color: white;
+}
+
+.btn-nightblue {
+    background-color: #0a1a2f;
+    color: white;
+}
+
+/*shared hover for all themed buttons*/
+.moon-hover:hover {
+    background-color: black !important;
+    color: white !important;
+}
+
+.moon-hover:active {
+    transform: scale(0.97);
+    opacity: 0.9;
+}
+
+.moon-hover:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.7);
+    outline-offset: 3px;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+/* ------------------------------------------------------------
+   22. TESTIMONIALS SECTION — Customer quotes + images
+------------------------------------------------------------ */
+.testimonials {
+    max-width: 1100px;
+    margin: 20px auto;
+    text-align: center;
+    padding: 0 20px;
+    /* background-color: blue; */
+}
+
+.testimonials-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.testimonials-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+/* Testimonial grid auto-adjusts to screen size */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Individual testimonial card */
+.testimonial-card {
+    background: var(--card-bg);
+    border: 1px solid #d8d2bd;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.testimonial-text {
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    line-height: 1.5;
+}
+
+.testimonial-name {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ------------------------------------------------------------
+GARDENT LIBRARY
+------------------------------------------------------------ */
+/* Circular clickable logo */
+.game-card .logo-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    background: white;
+    padding: 6px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.25);
+    margin-bottom: 14px;
+    transition: transform 0.25s ease;
+    /* background-color: red; */
+}
+
+/* Hover effect ONLY on the logo */
+.game-card a:hover .logo-img {
+    transform: scale(1.05);
+}
+
+/* ------------------------------------------------------------
+   23. QUICK VIEW OVERLAY — Fullscreen modal for product details
+------------------------------------------------------------ */
+.quickview-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 15, 0.85);
+    /* Dark translucent backdrop */
+    display: none;
+    /* Hidden until targeted */
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.quickview-overlay.active {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Modal box */
+.quickview-modal {
+    background: #111015;
+    color: #f7f3ea;
+    width: 90%;
+    max-width: 850px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 14px;
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.quickview-buy {
+    padding: 12px 22px;
+    /* more space */
+    border-radius: 999px;
+    /* pill shape */
+    font-size: 1rem;
+    /* slightly larger text */
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: inline-block;
+    margin: 5px;
+}
+
+.quickview-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #f7f3ea;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.quickview-close:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.quickview-modal img {
+    max-height: 350px;
+    /* shorten the image */
+    width: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    /* background-color: white; */
+    margin-top: 60px;
+}
+
+
+/* Desktop layout: side-by-side */
+@media (min-width: 768px) {
+    .quickview-modal {
+        flex-direction: row;
+    }
+}
+
+.quickview-modal img {
+    max-width: 320px;
+    border-radius: 10px;
+}
+
+.quickview-content {
+    flex: 1;
+}
+
+.quickview-stars i {
+    color: #f6c453;
+}
+
+.quickview-price {
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Close button */
+.quickview-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #f7f3ea;
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+
+/* Buy Now button */
+/* .quickview-buy {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+    background: #f6c453;
+    color: #111015;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+} */
+
+/* ------------------------------------------------------------
+   24. CONTACT SECTION — Botanical-themed contact form
+------------------------------------------------------------ */
+.contact-section {
+    background: var(--card-bg);
+    padding: 45px 35px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+    max-width: 750px;
+    margin: 0 auto 3rem;
+    border: 1px solid #d8d2bd;
+    /* Dried herb border */
+}
+
+/* Section heading */
+.contact-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+/* Form layout */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* Labels */
+.contact-form label {
+    font-weight: 600;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+}
+
+/* Inputs + textarea */
+.contact-form input,
+.contact-form textarea {
+    padding: 14px;
+    border: 1px solid #c9c2a3;
+    border-radius: 10px;
+    background: var(--bg-light);
+    font-size: 1rem;
+    transition: 0.2s ease;
+}
+
+/* Focus glow */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 8px rgba(200, 169, 106, 0.45);
+}
+
+/* Submit button */
+.contact-form .btn {
+    background: var(--accent-color);
+    color: var(--text-light);
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.15rem;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: 0.25s ease;
+}
+
+/* Hover */
+.contact-form .btn:hover {
+    background: var(--secondary-accent);
+    transform: translateY(-2px);
+}
+
+/* Decorative botanical divider */
+.contact-section::before {
+    content: "🌿 ✦ 🌙 ✦ 🌿";
+    display: block;
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--secondary-accent);
+    margin-bottom: 1.5rem;
+}
+
+/* ------------------------------------------------------------
+   25. UNIVERSAL FOOTER — Inline footer used across pages
+   - Deep herbal green background
+   - Centered brand + links + social icons
+------------------------------------------------------------ */
+.footer-inline {
+    background: var(--primary-color);
+    /* Herbal green */
+    color: var(--text-light);
+    /* White text */
+    padding: 10px 5px;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Prevents breaking on small screens */
+    /* background-color: purple; */
+}
+
+/* Homepage footer variation — stacked layout */
+.footer-inline-home {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+    padding-bottom: 0px;
+    /* background-color: orange; */
+}
+
+/* Footer brand text */
+.footer-inline .footer-brand {
+    font-family: var(--font-family);
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+/* ------------------------------------------------------------
+   26. FOOTER LINKS — Privacy Policy, Contact, etc.
+   - Gold text with lavender hover
+------------------------------------------------------------ */
+.footer-inline>a,
+.footer-divider,
+.footer-contact-info a {
+    color: var(--accent-color);
+    /* Gold */
+    font-weight: 500;
+    margin: 0 6px;
+    text-decoration: none;
+}
+
+/* Hover effect */
+.footer-inline>a:hover,
+.footer-contact-info a:hover {
+    color: var(--secondary-accent);
+    /* Lavender hover */
+    text-decoration: underline;
+}
+
+/* ------------------------------------------------------------
+   27. FOOTER SOCIAL ICONS — Horizontal row of SVG icons
+------------------------------------------------------------ */
+.footer-social-inline {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+/* Icon styling */
+.footer-social-inline svg {
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+    border-radius: 50%;
+    background: var(--secondary-accent);
+    /* Lavender circle */
+    fill: var(--primary-color);
+    /* Herbal green icon */
+    transition: transform 0.2s ease;
+}
+
+/* Hover scale */
+.footer-social-inline svg:hover {
+    transform: scale(1.1);
+}
+
+/* ------------------------------------------------------------
+   28. BOTANICAL ROW — Decorative divider with herb vibes
+------------------------------------------------------------ */
+.botanical-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #c9c2a3;
+    /* Dried herb color */
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+/* Botanical text */
+.botanical-text {
+    font-family: var(--font-family);
+    font-size: 2rem;
+    letter-spacing: 1px;
+    color: #4a4a3f;
+    /* Earthy tone */
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+    transform: rotate(-1deg);
+}
+
+/* ------------------------------------------------------------
+   29. ABOUT PAGE — Content sections with moon phase dividers
+------------------------------------------------------------ */
+.content-area {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #c9c2a3;
+    text-align: center;
+}
+
+/* Centered lists */
+.content-area ul {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-left: 1.2rem;
+}
+
+/* Moon phase divider */
+.content-area::after {
+    content: "🌕 🌖 🌗 🌘 🌑 🌒 🌓 🌔";
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: var(--secondary-accent);
+}
+
+/* Remove divider for last section */
+.content-area:last-of-type {
+    border-bottom: none !important;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.content-area:last-of-type::after {
+    content: none;
+}
+
+/* ------------------------------------------------------------
+   30. BLOG LIST — Grid layout for blog cards
+------------------------------------------------------------ */
+.blog-list {
+    display: grid;
+    gap: 30px;
+    margin: 3rem 0;
+}
+
+/* Blog card styling */
+.blog-card {
+    background: var(--card-bg);
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-align: left;
+}
+
+/* Hover lift */
+.blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Blog title */
+.blog-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Blog excerpt */
+.blog-card p {
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+/* Read more link */
+.read-more {
+    color: var(--accent-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    color: var(--secondary-accent);
+    text-decoration: underline;
+}
+
+/*Policies*/
+#privacy {
+    margin-top: 120px;
+}
+
+#privacy,
+#terms,
+#shipping,
+#returns,
+#disclaimer,
+#faq {
+    scroll-margin-top: 110px;
+    /* background-color: red; */
+}
+
+/* ------------------------------------------------------------
+   31. RESPONSIVE MEDIA QUERIES — Tablet + Mobile adjustments
+------------------------------------------------------------ */
+
+/* Tablet screens */
+@media (max-width: 992px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 20px;
+    }
+
+    .coming-track {
+        gap: 16px;
+        padding: 10px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .coming-emoji {
+        margin: 0 20px;
+        height: 80px;
+        width: 80px;
+        font-size: 2.8rem;
+    }
+}
+
+/* Small screens (phones 480px and below) */
+@media (max-width: 480px) {
+
+    .container {
+        padding-top: 10px;
+        /* background-color: yellow; */
+    }
+
+    /* Stack navbar items like before */
+    .navBar {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        padding: 0.1rem 1rem;
+        gap: 8px;
+        /* background-color: red; */
+    }
+
+    /* Logo stays centered */
+    .logo {
+        position: static;
+        transform: none;
+        margin-bottom: 8px;
+        /* background-color: green; */
+    }
+
+    /* Slightly smaller logo for tiny screens */
+    .logo img {
+        height: 95px;
+        width: auto;
+        /* background-color: blue; */
+    }
+
+    /* Fit nav links on small screens */
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        /* allows wrapping instead of overflow */
+        gap: 6px;
+        padding: 5px;
+        font-size: 15px;
+        /* background-color: orange; */
+    }
+
+    .nav-links li {
+        margin: 0 6px;
+    }
+
+    /* Single-column cards */
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Shorter hero */
+    .hero {
+        height: 35vh;
+        padding: 340px 10px 110px;
+    }
+
+    .coming-track {
+        gap: 5px;
+        padding: 1px 0;
+        flex-wrap: wrap;
+        /* allows wrapping instead of stretching */
+        justify-content: center;
+    }
+
+    .coming-emoji {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        width: 50px;
+        margin: 5px;
+        font-size: 40px;
+        /* line-height: 1; */
+        /* THIS centers the emoji perfectly */
+    }
+
+    .coming-item {
+        width: 66px; /*keeps all items equal width*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* centers emoji horizontally */
+        justify-content: center;
+        text-align: center;
+    }
+    .coming-item p {
+        font-size: 0.75rem;
+        line-height: 1;
+        word-wrap: break-word;
+    }
+}

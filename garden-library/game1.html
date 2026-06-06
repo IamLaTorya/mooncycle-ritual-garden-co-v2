@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Library| Game 1</title>
+    <link rel="stylesheet" href="games.css" />
+</head>
+
+<body class="game1-body">
+    <a href="../library.html" class="back-link">Back to Garden Library</a>
+    <main class="main">
+        <div class="game">
+
+            <div class="logo">
+                <img src="../assets/images/logo-game1.png" class="circle-logo-img" alt="Catch the Light Game Logo">
+            </div>
+
+            <div class="top-bar">
+                <button id="startBtn">Start</button>
+                <p>Score: <span id="score">0</span></p>
+                <p>Time Left: <span id="timer">30</span>s</p>
+
+            </div>
+
+            <div class="grid">
+                <div class="hole" data-key="7">7</div>
+                <div class="hole" data-key="8">8</div>
+                <div class="hole" data-key="9">9</div>
+                <div class="hole" data-key="4">4</div>
+                <div class="hole" data-key="5">5</div>
+                <div class="hole" data-key="6">6</div>
+                <div class="hole" data-key="1">1</div>
+                <div class="hole" data-key="2">2</div>
+                <div class="hole" data-key="3">3</div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <!-- Text inside the footer showing year and the creator's (my) information -->
+        <p>&copy; 2026 ToyMindPlay Studio. All rights reserved.</p>
+    </footer>
+    <!-- Hit sound -->
+    <audio id="hitSound" src="../assets/sounds/good-energy.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

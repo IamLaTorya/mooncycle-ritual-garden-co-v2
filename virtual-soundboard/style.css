@@ -126,7 +126,7 @@ body {
 .logo {
     width: 300px;
     margin: 0 auto 0.5rem;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 
 /* Makes the logo image scale to fit its container.
@@ -155,7 +155,7 @@ body {
     /* Adds space below the split text.
        Separates it from the keys. */
     margin-bottom: 2rem;
-    background-color: green;
+    /* background-color: green; */
 }
 
 /* Makes each split-text item a block.
@@ -223,7 +223,7 @@ body {
     overflow: hidden;
     /*Gives more space for the glow to be seen*/
     padding: 3px;
-    background-color: orange;
+    /* background-color: orange; */
 }
 
 /* INDIVIDUAL KEY — chakra button styling*/

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadCartCount();
     renderCatalog(storeCatalog);
 });
-function generateStars(rating) {
+function starsRating(rating) {
     const starContainer = document.createElement("div");
     starContainer.className = "text-warning mb-2";
 
@@ -69,7 +69,7 @@ function renderCatalog(products) {
         price.className = "fw-semibold mb-1";
         price.textContent = `$${product.price.toFixed(2)}`;
 
-        const stars = generateStars(product.rating);
+        const stars = starsRating(product.rating);
 
         // Button container (Bootstrap flexbox)
         const btnRow = document.createElement("div");
@@ -91,7 +91,7 @@ function renderCatalog(products) {
             addToCart(product);
             window.location.href = "cart.html";
         });
-
+        // Quick View button
         const quickBtn = document.createElement("button");
         quickBtn.className = "btn btn-outline-dark mt-auto";
         quickBtn.classList.add("btn-nightblue", "moon-hover");
@@ -119,7 +119,7 @@ const openQuickView = (product) => {
             <div class="quickview-content">
                 <h2>${product.name}</h2>
                 <p class="quickview-price">$${product.price.toFixed(2)}</p>
-                <div class="quickviw-stars">${generateStars(product.rating).outerHTML}</div>
+                <div class="quickviw-stars">${starsRating(product.rating).outerHTML}</div>
                 <p>${product.description}</p>
 
                 <h3>Ingredients</h3>

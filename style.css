@@ -775,7 +775,7 @@ GARDENT LIBRARY
     /* Herbal green */
     color: var(--text-light);
     /* White text */
-    padding: 10px 5px;
+    padding: 10px 1px;
     text-align: center;
 
     display: flex;
@@ -790,7 +790,7 @@ GARDENT LIBRARY
 .footer-inline-home {
     flex-direction: column;
     justify-content: flex-start;
-    gap: 8px;
+    gap: 2px;
     padding-bottom: 0px;
     /* background-color: orange; */
 }
@@ -975,9 +975,9 @@ GARDENT LIBRARY
 #privacy,
 #terms,
 #shipping,
-#returns,
 #disclaimer,
-#faq {
+#faq,
+#license {
     scroll-margin-top: 110px;
     /* background-color: red; */
 }

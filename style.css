@@ -32,10 +32,12 @@
 /* ------------------------------------------------------------
    2. RESET — Removes browser default spacing + box model issues
 ------------------------------------------------------------ */
-* {
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 /* ------------------------------------------------------------
@@ -44,7 +46,7 @@
 body {
     font-family: var(--font-family);
     /* Your brand script font */
-    line-height: 1.6;
+    line-height: 1.2;
     /* Comfortable reading */
     background-color: var(--bg-light);
     /* Warm cream background */
@@ -775,9 +777,8 @@ GARDENT LIBRARY
     /* Herbal green */
     color: var(--text-light);
     /* White text */
-    padding: 10px 1px;
+    padding: 2px;
     text-align: center;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -785,18 +786,20 @@ GARDENT LIBRARY
     /* Prevents breaking on small screens */
     /* background-color: purple; */
 }
-
+.footer-inline:not(.footer-inline-home) {
+    flex-direction: row;
+    gap: 5px;
+    /* Space between items */
+}
 /* Homepage footer variation — stacked layout */
 .footer-inline-home {
     flex-direction: column;
     justify-content: flex-start;
-    gap: 2px;
-    padding-bottom: 0px;
     /* background-color: orange; */
 }
 
 /* Footer brand text */
-.footer-inline .footer-brand {
+.footer-brand {
     font-family: var(--font-family);
     font-size: 1.3rem;
     letter-spacing: 1px;

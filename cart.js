@@ -45,8 +45,8 @@ if (!cartRoot) {
         let itemsHTML = "";
         cart.forEach(item => {
             itemsHTML += `
-                <div class="cart-item d-flex align-items-center gap-3 mb-3">
-                    <img src="${item.image}" class="cart-img" alt="${item.name}">
+                <div class="cart-item d-flex justify-content-end align-items-right mb-3 p-2 border rounded">
+                    <img src="${item.image}" class="cart-img-fluid w-25 me-2" alt="${item.name}">
                     <div class="flex-grow-1">
                         <h5>${item.name}</h5>
                         <p>$${item.price.toFixed(2)}</p>

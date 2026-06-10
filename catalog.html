@@ -47,8 +47,15 @@
                 </li>
             </ul>
         </nav>
-    </header>
 
+    </header>
+        <script>
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+
+            const badge = document.getElementById("cart-count");
+            if (badge) badge.textContent = totalQty;
+        </script>
     <!-- Hero section -->
     <section class="hero text-center">
         <h1>Welcome to the Garden Shop</h1>

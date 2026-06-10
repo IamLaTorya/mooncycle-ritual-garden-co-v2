@@ -1,6 +1,7 @@
 // catalog.js
-import { addToCart, loadCartCount } from "./cart.js";
+import { addToCart, loadCartCount } from "./shopping.js";
 import { storeCatalog } from "./catalogData.js";
+import "./cart.js"; // for buyNow function
 
 // DOM references
 const productGrid = document.getElementById("product-grid");
@@ -88,8 +89,7 @@ function renderCatalog(products) {
         buyBtn.classList.add("btn-pink", "moon-hover");
         buyBtn.textContent = "Buy Now";
         buyBtn.addEventListener("click", () => {
-            addToCart(product);
-            window.location.href = "cart.html";
+            buyNow(product);
         });
         // Quick View button
         const quickBtn = document.createElement("button");
@@ -138,7 +138,7 @@ const openQuickView = (product) => {
                     ${product.details.included.map(i => `<li>${i}</li>`).join("")}
                 </ul>
 
-                <button class="quickview-buy btn-lavender moon-hover">Add to Cart</button>
+                <button class="quickview-add btn-lavender moon-hover">Add to Cart</button>
                 <button class="quickview-buy btn-pink moon-hover">Buy Now</button>
             </div>
         </div>
@@ -146,9 +146,13 @@ const openQuickView = (product) => {
     `;
 
     document.querySelector(".quickview-close").addEventListener("click", closeQuickView);
-
-    document.querySelector(".quickview-buy").addEventListener("click", () => {
+    document.querySelector(".quickview-add").addEventListener("click", () => {
         addToCart(product);
+        closeQuickView();
+    });
+    
+    document.querySelector(".quickview-buy").addEventListener("click", () => {
+        buyNow(product);
         closeQuickView();
     });
 }

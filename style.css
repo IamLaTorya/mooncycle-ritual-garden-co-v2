@@ -56,6 +56,15 @@ body {
     flex-direction: column;
     min-height: 100vh;
     /* Ensures footer stays at bottom */
+    /* stops the blinking when transitioning from page to page on website */
+    opacity: 0;
+    animation: ultraSlowFade 0ms cubic-bezier(0.33, 1, 0.68, 1) 0.15s forwards;
+}
+
+@keyframes ultraSlowFade {
+    to {
+        opacity: 1;
+    }
 }
 
 /* ------------------------------------------------------------
@@ -530,7 +539,7 @@ body {
 }
 
 /* ------------------------------------------------------------
-GARDENT LIBRARY
+GARDEN LIBRARY
 ------------------------------------------------------------ */
 /* Circular clickable logo */
 .game-card .logo-img {
@@ -588,6 +597,7 @@ GARDENT LIBRARY
     gap: 1.5rem;
 }
 
+.quickview-add,
 .quickview-buy {
     padding: 12px 22px;
     /* more space */
@@ -630,6 +640,8 @@ GARDENT LIBRARY
     /* background-color: white; */
     margin-top: 60px;
 }
+
+/* Cart */
 
 
 /* Desktop layout: side-by-side */
@@ -786,11 +798,13 @@ GARDENT LIBRARY
     /* Prevents breaking on small screens */
     /* background-color: purple; */
 }
+
 .footer-inline:not(.footer-inline-home) {
     flex-direction: row;
     gap: 5px;
     /* Space between items */
 }
+
 /* Homepage footer variation — stacked layout */
 .footer-inline-home {
     flex-direction: column;
@@ -1092,7 +1106,8 @@ GARDENT LIBRARY
     }
 
     .coming-item {
-        width: 66px; /*keeps all items equal width*/
+        width: 66px;
+        /*keeps all items equal width*/
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1100,6 +1115,7 @@ GARDENT LIBRARY
         justify-content: center;
         text-align: center;
     }
+
     .coming-item p {
         font-size: 0.75rem;
         line-height: 1;

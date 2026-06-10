@@ -59,7 +59,13 @@
             </ul>
         </nav>
     </header>
+    <script>
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
 
+        const badge = document.getElementById("cart-count");
+        if (badge) badge.textContent = totalQty;
+    </script>
     <!-- This is the hero section, the large banner area at the top of the page -->
     <section class="hero">
 
@@ -80,7 +86,6 @@
             <!-- JS will create and manage cart details here -->
         </div>
     </main>
-
 
     <!--Footer-->
     <!-- This is the footer with brand name, location, and social icons -->
@@ -147,7 +152,8 @@
         </div>
     </footer>
     <!-- The external catalog script (no inline JS) -->
-    <script type="module" src="catalog.js"></script>
+    <script type="module" src="shopping.js"></script>
+    <script type="module" src="cart.js"></script>
 </body>
 
 </html>

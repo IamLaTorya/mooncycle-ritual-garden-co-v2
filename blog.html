@@ -55,14 +55,21 @@
                     <a href="cart.html" class="cart-link">
                         <i class="bi bi-bag-fill"></i>
                         <span class="cart-label">Cart</span>
-                        <span id="cart-count" class="badge bg-dark ms-1">0</span>
+                        <span id="cart-count" class="badge bg-dark ms-1"></span>
                     </a>
                 </li>
             </ul>
 
         </nav>
-    </header>
 
+    </header>
+        <script>
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+
+            const badge = document.getElementById("cart-count");
+            if (badge) badge.textContent = totalQty;
+        </script>
     <!-- This is the hero section, the large banner area at the top of the page -->
     <section class="hero">
 

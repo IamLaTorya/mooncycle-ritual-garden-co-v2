@@ -197,6 +197,7 @@ button {
 
 .game2-body {
     /* main layout for Game 2 */
+    min-height: 100vh;
     font-family: "Cormorant Garamond", serif;
     /* elegant serif */
     background: radial-gradient(circle at top, #1a1a1d, #0d0d0f 60%);

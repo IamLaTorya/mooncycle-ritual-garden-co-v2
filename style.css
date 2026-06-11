@@ -43,6 +43,9 @@
 /* ------------------------------------------------------------
    3. BASE STYLES — Global layout + typography
 ------------------------------------------------------------ */
+html {
+    height: 100%;
+}
 body {
     font-family: var(--font-family);
     /* Brand script font */
@@ -641,15 +644,6 @@ GARDEN LIBRARY
     margin-top: 60px;
 }
 
-/* Cart */
-
-
-/* Desktop layout: side-by-side */
-@media (min-width: 768px) {
-    .quickview-modal {
-        flex-direction: row;
-    }
-}
 
 .quickview-modal img {
     max-width: 320px;
@@ -1007,6 +1001,13 @@ GARDEN LIBRARY
         height: 80px;
         width: 80px;
         font-size: 2.8rem;
+    }
+}
+
+/* Desktop layout: side-by-side */
+@media (min-width: 768px) {
+    .quickview-modal {
+        flex-direction: row;
     }
 }
 

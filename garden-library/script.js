@@ -107,7 +107,7 @@ function endGame() {
     activeKey = null;
 
     // Show the final score to the player
-    alert("You honored the light, and it answered! \n*****  Your final score is: " + score + "*****  \nYour energy is brighter now. Carry this glow with you.");
+    alert("You honored the light, and it answered! \n*****  Your final score is: " + score + " *****  \nYour energy is brighter now. Carry this glow with you.");
 
     // Re-enable the Start button
     startBtn.disabled = false;

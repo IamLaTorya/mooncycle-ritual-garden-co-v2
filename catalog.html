@@ -49,13 +49,17 @@
         </nav>
 
     </header>
-        <script>
-            const cart = JSON.parse(localStorage.getItem("cart")) || [];
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-
-            const badge = document.getElementById("cart-count");
-            if (badge) badge.textContent = totalQty;
-        </script>
+    <!--This script loads the saved shopping cart from localStorage, adds up all items in the cart and updates the badge to show the correct number of items.-->
+    <script>
+        //Load cart from localStorage, storing strings then converting is back into an array with json.parse. If the cart is empty, it defaults to an empty array.
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        //Calculate the total number of items, using the .reduce method to loop through the entire cart array
+        const totalNumOfItems = cart.reduce((sum, item) => sum + item.qty, 0);
+        //Find the cart badge element in HTML with the ID "cart-count".
+        const badge = document.getElementById("cart-count");
+        //Update the badge if it exists, this ensures the badge always shows the correct number when it is present.
+        if (badge) badge.textContent = totalNumOfItems;
+    </script>
     <!-- Hero section -->
     <section class="hero text-center">
         <h1>Welcome to the Garden Shop</h1>
@@ -174,7 +178,7 @@
         </div>
     </footer>
 
-    <!-- The external catalog script (no inline JS) -->
+    <!-- The external catalog script (no inline JS) JavaScript file is using ES6 module syntax by including type="module" -->    
     <script type="module" src="catalog.js"></script>
 </body>
 

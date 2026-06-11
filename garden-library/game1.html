@@ -1,30 +1,56 @@
+<!-- Declare the document type so the browser uses modern HTML standards -->
 <!DOCTYPE html>
+
+<!-- Begin the HTML document and set the language to English -->
 <html lang="en">
 
 <head>
+    <!-- Set the character encoding so all text displays correctly -->
     <meta charset="UTF-8" />
+
+    <!-- Make the layout responsive on phones and tablets -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Set the title that appears in the browser tab -->
     <title>Garden Library| Game 1</title>
+
+    <!-- Link to the external CSS file for game styling -->
     <link rel="stylesheet" href="games.css" />
 </head>
 
+<!-- Apply a special body class for Game 1 styling -->
 <body class="game1-body">
+
+    <!-- Back link that returns the user to the Garden Library page -->
     <a href="../library.html" class="back-link">Back to Garden Library</a>
+
+    <!-- Main content area for the game -->
     <main class="main">
+
+        <!-- Wrapper that holds all game elements together -->
         <div class="game">
 
+            <!-- Logo section at the top of the game -->
             <div class="logo">
+                <!-- Game logo image with alt text for accessibility -->
                 <img src="../assets/images/logo-game1.png" class="circle-logo-img" alt="Catch the Light Game Logo">
             </div>
 
+            <!-- Top bar showing Start button, Score, and Timer -->
             <div class="top-bar">
+                <!-- Button that starts the game -->
                 <button id="startBtn">Start</button>
-                <p>Score: <span id="score">0</span></p>
-                <p>Time Left: <span id="timer">30</span>s</p>
 
+                <!-- Score display with a span that updates dynamically -->
+                <p>Score: <span id="score">0</span></p>
+
+                <!-- Timer display with a span that counts down -->
+                <p>Time Left: <span id="timer">30</span>s</p>
             </div>
 
+            <!-- Grid of clickable holes used in the game -->
             <div class="grid">
+                <!-- Each hole has a data-key used by the JavaScript logic -->
                 <div class="hole" data-key="7">7</div>
                 <div class="hole" data-key="8">8</div>
                 <div class="hole" data-key="9">9</div>
@@ -37,17 +63,21 @@
             </div>
         </div>
     </main>
+
+    <!-- Footer section containing authorship license -->
     <footer class="footer">
-        <!-- Authorship License -->
+        <!-- License text that protects author's work -->
         <div class="footer-license">
             <p>LaTorya Hoyle-Sadler presents ToyMind Interactive
                 &copy; 2026 <span class="footer-divider">•</span>
                 No copying, redistribution, or commercial use without permission.</p>
         </div>
     </footer>
-    <!-- Hit sound -->
+
+    <!-- Audio element that plays when the player hits the correct hole -->
     <audio id="hitSound" src="../assets/sounds/good-energy.mp3"></audio>
 
+    <!-- Link to the JavaScript file that controls the game logic -->
     <script src="script.js"></script>
 </body>
 

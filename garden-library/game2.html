@@ -1,35 +1,55 @@
+<!-- Declare the document type so the browser uses modern HTML standards -->
 <!DOCTYPE html>
+
+<!-- Begin the HTML document and set the language to English -->
 <html lang="en">
 
 <head>
+    <!-- Set the character encoding so all text displays correctly -->
     <meta charset="UTF-8">
+
+    <!-- Make the layout responsive on phones and tablets -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title that appears in the browser tab -->
     <title>Garden Library | Game 2</title>
+
+    <!-- Link to the shared CSS file for all Garden Library games -->
     <link rel="stylesheet" href="games.css">
 </head>
 
+<!-- Apply a special body class for Game 2 styling -->
 <body class="game2-body">
+
+    <!-- Back link that returns the user to the Garden Library page -->
     <a href="../library.html" class="back-link">Back to Garden Library</a>
-    <!-- GAME TITLE + DESCRIPTION -->
+
+    <!-- Logo section for the Paired & Revealed game -->
     <div class="logo">
+        <!-- Game logo image with alt text for accessibility -->
         <img src="../assets/images/logo-game2.png" class="logo-img" alt="Paired & Revealed Card Game Logo">
     </div>
+
+    <!-- Short description explaining the purpose of the game -->
     <p class="game-description">
         Match pairs. Reveal messages. Your three‑part reading unfolds as you play.
     </p>
 
-    <!-- GAME BOARD (JS will fill this with cards) -->
+    <!-- Main container where the JavaScript will generate the card grid -->
     <main class="main">
+        <!-- Empty board that script1.js will fill with cards dynamically -->
         <div class="game-board"></div>
     </main>
+
+    <!-- Footer section containing authorship and license information -->
     <footer class="footer">
-        <!-- Text inside the footer showing year and the creator's (my) information -->
+        <!-- Text inside the footer showing year and creator information -->
         <p>LaTorya Hoyle-Sadler presents ToyMind Interactive
             &copy; 2026 <span class="footer-divider">•</span>
             No copying, redistribution, or commercial use without permission.</p>
     </footer>
 
-    </footer>
+    <!-- Link to the JavaScript file that controls the memory game logic -->
     <script src="script1.js"></script>
 </body>
 

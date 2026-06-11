@@ -45,7 +45,7 @@
 ------------------------------------------------------------ */
 body {
     font-family: var(--font-family);
-    /* Your brand script font */
+    /* Brand script font */
     line-height: 1.2;
     /* Comfortable reading */
     background-color: var(--bg-light);
@@ -680,19 +680,6 @@ GARDEN LIBRARY
     text-decoration: none;
 }
 
-/* Buy Now button */
-/* .quickview-buy {
-    display: block;
-    margin-top: 1rem;
-    text-align: center;
-    background: #f6c453;
-    color: #111015;
-    padding: 0.7rem 1rem;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 600;
-} */
-
 /* ------------------------------------------------------------
    24. CONTACT SECTION — Botanical-themed contact form
 ------------------------------------------------------------ */
@@ -993,7 +980,7 @@ GARDEN LIBRARY
 #terms,
 #disclaimer,
 #license {
-    scroll-margin-top: 110px;
+    scroll-margin-top: 200px;
     /* background-color: red; */
 }
 

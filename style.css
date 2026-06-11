@@ -981,7 +981,11 @@ GARDEN LIBRARY
 /* ------------------------------------------------------------
    31. RESPONSIVE MEDIA QUERIES — Tablet + Mobile adjustments
 ------------------------------------------------------------ */
-
+@supports (-webkit-touch-callout: none) {
+    html {
+        height: -webkit-fill-avaliable;/*iPhone bounce lock*/
+    }
+}
 /* Tablet screens */
 @media (max-width: 992px) {
     .card-grid {
@@ -1013,7 +1017,11 @@ GARDEN LIBRARY
 
 /* Small screens (phones 480px and below) */
 @media (max-width: 480px) {
-
+    html {
+        overscroll-behavior: none;
+        height: 100%;/*safe for mobile*/
+    }
+    
     .container {
         padding-top: 10px;
         /* background-color: yellow; */
